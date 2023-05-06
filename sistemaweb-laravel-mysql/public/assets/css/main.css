@@ -1,0 +1,26 @@
+/* Estilos para barra lateral */
+.right {
+    position: absolute;
+    right: 1rem;
+    top: 0.7rem;
+}
+
+/* Estilos para filas de tablas */
+.table-hover tbody tr:hover {
+    color: #007bff;
+}
+
+/* Estilos para imagenes de articulos */
+.articulo_edit {
+    width: 400px;
+}
+
+.articulo_list {
+    width: 80px;
+    height: 80px;
+    overflow: hidden;
+}
+
+.articulo_list img {
+    width: 80px;
+}

@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Gate;
+use App\User;
 
 class AuthServiceProvider extends ServiceProvider
 {
@@ -25,6 +26,19 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
-        //
+        /*
+         * Definimos Gates
+         * Gates reciben user autenticado de forma automatica
+         */         
+        Gate::define('haveaccess', function(User $user, $perm){
+            //Verificacion de usuario autenticado
+            // dump($user, $perm);
+            // echo "<pre>";
+            // echo $user;
+            // echo "</pre>";
+            //Cerrar Verificacion de usuario autenticado
+
+            return $user->havePermission($perm);
+        });
     }
 }
